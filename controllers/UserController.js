@@ -5,19 +5,25 @@ module.exports = {
 
   async index(req,res) {
 
-    const {user} = req.body;
+    const user = req.body;
 
-    if (user == '') {
-      const users = await connection('usuarios')
-    .select('*');
-    }
-
-    const users = await connection('usuarios')
+    if(user.user == ''){
+     const users = await connection('usuarios')
     .select('*')
-    .where('usuario', user)
-    
 
     res.json(users);
+    }
+
+    else if(user.user != ''){
+      const users = await connection('usuarios')
+      .select('*')
+      .where('usuario', user.user)
+  
+      res.json(users);
+    }
+    
+
+    
 
   },
 

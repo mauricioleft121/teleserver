@@ -4,7 +4,13 @@ import { v4 as uuidv4 } from 'uuid';
 module.exports = {
 
   async index(req,res) {
-    const users = await connection('usuarios').select('*');
+
+    const {user} = req.body;
+
+    const users = await connection('usuarios')
+    .select('*')
+    .where('usuario', user)
+    
 
     res.json(users);
 

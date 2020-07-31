@@ -7,6 +7,11 @@ module.exports = {
 
     const {user} = req.body;
 
+    if (user == '') {
+      const users = await connection('usuarios')
+    .select('*');
+    }
+
     const users = await connection('usuarios')
     .select('*')
     .where('usuario', user)

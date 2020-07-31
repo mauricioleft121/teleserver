@@ -4,7 +4,7 @@ import UserController from '../controllers/UserController'
 const connection = require('../src/database/connection');
 
 const routes = new Router();
-
+routes.get('/user', UserController.todos)
 routes.post('/users', UserController.index)
 routes.post('/user', UserController.create)
 routes.delete('/user', UserController.delete)

@@ -1,0 +1,8 @@
+{
+  "appService.zipIgnorePattern": [
+    "node_modules{,/**}",
+    ".vscode{,/**}"
+  ],
+  "appService.defaultWebAppToDeploy": "/subscriptions/6bfa37a2-774d-4d12-bb24-8e5b552d515d/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/cornos",
+  "appService.deploySubpath": "."
+}
